@@ -5,7 +5,9 @@ import "bootstrap/dist/css/bootstrap-grid.css";
 import "./bootstrap-css/bootstrap.css";
 import logo from "./img/logo.png";
 import ads1 from "./img/ads-1.jpg";
-import ads2 from "./img/ads-2.jpg";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 import news1 from "./img/news-350x223-1.jpg";
 import news2 from "./img/news-350x223-2.jpg";
 import news3 from "./img/news-350x223-3.jpg";
@@ -33,10 +35,10 @@ function App() {
             </div>
             <div className="col-md-6">
               <div className="tb-menu">
-                <a href="">About</a>
-                <a href="">Privacy</a>
-                <a href="">Terms</a>
-                <a href="">Contact</a>
+                <a href="/">About</a>
+                <a href="/">Privacy</a>
+                <a href="/">Terms</a>
+                <a href="/">Contact</a>
               </div>
             </div>
           </div>
@@ -146,24 +148,26 @@ function App() {
           <div className="row">
             <div className="col-md-6 tn-left">
               <div className="row tn-slider">
-                <div className="col-md-6">
-                  <div className="tn-img">
-                    <img src={news21} alt="" />
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
+                <Slider>
+                  <div className="col-md-6">
+                    <div className="tn-img">
+                      <img src={news21} alt="" />
+                      <div className="tn-title">
+                        <a href="/">Lorem ipsum dolor sit amet</a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="tn-img">
-                    <img src={news22} alt="" />
-                    <div className="tn-title">
-                      <a href="/">
-                        Integer hendrerit elit eget purus sodales maximus
-                      </a>
+                  <div className="col-md-6">
+                    <div className="tn-img">
+                      <img src={news22} alt="" />
+                      <div className="tn-title">
+                        <a href="/">
+                          Integer hendrerit elit eget purus sodales maximus
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Slider>
               </div>
             </div>
             <div className="col-md-6 tn-right">
@@ -212,59 +216,63 @@ function App() {
             <div className="col-md-6">
               <h2>Sports</h2>
               <div className="row cn-slider">
-                <div className="col-md-6">
-                  <div className="cn-img">
-                    <img src={news1} alt="" />
-                    <div className="cn-title">
-                      <a href="/">Lorem ipsum dolor sit</a>
+                <Slider slidesToShow={2} autoplay={true} autoplaySpeed={3000}>
+                  <div className="col-md-6">
+                    <div className="cn-img">
+                      <img src={news1} alt="" />
+                      <div className="cn-title">
+                        <a href="/">Lorem ipsum dolor sit</a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="cn-img">
-                    <img src={news2} alt="" />
-                    <div className="cn-title">
-                      <a href="/">Lorem ipsum dolor sit</a>
+                  <div className="col-md-6">
+                    <div className="cn-img">
+                      <img src={news2} alt="" />
+                      <div className="cn-title">
+                        <a href="/">Lorem ipsum dolor sit</a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="cn-img">
-                    <img src={news3} />
-                    <div className="cn-title">
-                      <a href="">Lorem ipsum dolor sit</a>
+                  <div className="col-md-6">
+                    <div className="cn-img">
+                      <img src={news3} alt="" />
+                      <div className="cn-title">
+                        <a href="/">Lorem ipsum dolor sit</a>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Slider>
               </div>
             </div>
             <div className="col-md-6">
               <h2>Technology</h2>
               <div className="row cn-slider">
-                <div className="col-md-6">
-                  <div className="cn-img">
-                    <img src={news4} />
-                    <div className="cn-title">
-                      <a href="">Lorem ipsum dolor sit</a>
+                <Slider slidesToShow={2} autoplay={true} autoplaySpeed={3000}>
+                  <div className="col-md-6">
+                    <div className="cn-img">
+                      <img src={news4} alt="" />
+                      <div className="cn-title">
+                        <a href="/">Lorem ipsum dolor sit</a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="cn-img">
-                    <img src={news5} />
-                    <div className="cn-title">
-                      <a href="">Lorem ipsum dolor sit</a>
+                  <div className="col-md-6">
+                    <div className="cn-img">
+                      <img src={news5} alt="" />
+                      <div className="cn-title">
+                        <a href="/">Lorem ipsum dolor sit</a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="cn-img">
-                    <img src={news1} />
-                    <div className="cn-title">
-                      <a href="">Lorem ipsum dolor sit</a>
+                  <div className="col-md-6">
+                    <div className="cn-img">
+                      <img src={news1} alt="" />
+                      <div className="cn-title">
+                        <a href="/">Lorem ipsum dolor sit</a>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Slider>
               </div>
             </div>
           </div>
@@ -277,59 +285,63 @@ function App() {
             <div className="col-md-6">
               <h2>Business</h2>
               <div className="row cn-slider">
-                <div className="col-md-6">
-                  <div className="cn-img">
-                    <img src={news5} />
-                    <div className="cn-title">
-                      <a href="">Lorem ipsum dolor sit</a>
+                <Slider slidesToShow={2} autoplay={true} autoplaySpeed={3000}>
+                  <div className="col-md-6">
+                    <div className="cn-img">
+                      <img src={news5} alt="" />
+                      <div className="cn-title">
+                        <a href="/">Lorem ipsum dolor sit</a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="cn-img">
-                    <img src={news4} />
-                    <div className="cn-title">
-                      <a href="">Lorem ipsum dolor sit</a>
+                  <div className="col-md-6">
+                    <div className="cn-img">
+                      <img src={news4} alt="" />
+                      <div className="cn-title">
+                        <a href="/">Lorem ipsum dolor sit</a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="cn-img">
-                    <img src={news3} />
-                    <div className="cn-title">
-                      <a href="">Lorem ipsum dolor sit</a>
+                  <div className="col-md-6">
+                    <div className="cn-img">
+                      <img src={news3} alt="" />
+                      <div className="cn-title">
+                        <a href="/">Lorem ipsum dolor sit</a>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Slider>
               </div>
             </div>
             <div className="col-md-6">
               <h2>Entertainment</h2>
               <div className="row cn-slider">
-                <div className="col-md-6">
-                  <div className="cn-img">
-                    <img src={news2} />
-                    <div className="cn-title">
-                      <a href="">Lorem ipsum dolor sit</a>
+                <Slider slidesToShow={2} autoplay={true} autoplaySpeed={3000}>
+                  <div className="col-md-6">
+                    <div className="cn-img">
+                      <img src={news2} alt="" />
+                      <div className="cn-title">
+                        <a href="/">Lorem ipsum dolor sit</a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="cn-img">
-                    <img src={news1} />
-                    <div className="cn-title">
-                      <a href="">Lorem ipsum dolor sit</a>
+                  <div className="col-md-6">
+                    <div className="cn-img">
+                      <img src={news1} alt="" />
+                      <div className="cn-title">
+                        <a href="/">Lorem ipsum dolor sit</a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="cn-img">
-                    <img src={news3} />
-                    <div className="cn-title">
-                      <a href="">Lorem ipsum dolor sit</a>
+                  <div className="col-md-6">
+                    <div className="cn-img">
+                      <img src={news3} alt="" />
+                      <div className="cn-title">
+                        <a href="/">Lorem ipsum dolor sit</a>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Slider>
               </div>
             </div>
           </div>
@@ -366,78 +378,78 @@ function App() {
                 <div id="featured" className="container tab-pane active">
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news1} />
+                      <img src={news1} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news2} />
+                      <img src={news2} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news3} />
+                      <img src={news3} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                 </div>
                 <div id="popular" className="container tab-pane fade">
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news4} />
+                      <img src={news4} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news5} />
+                      <img src={news5} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news1} />
+                      <img src={news1} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                 </div>
                 <div id="latest" className="container tab-pane fade">
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news2} />
+                      <img src={news2} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news3} />
+                      <img src={news3} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news4} />
+                      <img src={news4} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                 </div>
@@ -471,78 +483,78 @@ function App() {
                 <div id="m-viewed" className="container tab-pane active">
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news5} />
+                      <img src={news5} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news4} />
+                      <img src={news4} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news3} />
+                      <img src={news3} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                 </div>
                 <div id="m-read" className="container tab-pane fade">
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news2} />
+                      <img src={news2} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news1} />
+                      <img src={news1} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news3} />
+                      <img src={news3} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                 </div>
                 <div id="m-recent" className="container tab-pane fade">
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news4} />
+                      <img src={news4} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news5} />
+                      <img src={news5} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                   <div className="tn-news">
                     <div className="tn-img">
-                      <img src={news1} />
+                      <img src={news1} alt="" />
                     </div>
                     <div className="tn-title">
-                      <a href="">Lorem ipsum dolor sit amet</a>
+                      <a href="/">Lorem ipsum dolor sit amet</a>
                     </div>
                   </div>
                 </div>
@@ -559,33 +571,33 @@ function App() {
               <div className="row">
                 <div className="col-md-4">
                   <div className="mn-img">
-                    <img src={news1} />
+                    <img src={news1} alt="" />
                     <div className="mn-title">
-                      <a href="">Lorem ipsum dolor sit</a>
+                      <a href="/">Lorem ipsum dolor sit</a>
                     </div>
                   </div>
                 </div>
                 <div className="col-md-4">
                   <div className="mn-img">
-                    <img src={news2} />
+                    <img src={news2} alt="" />
                     <div className="mn-title">
-                      <a href="">Lorem ipsum dolor sit</a>
+                      <a href="/">Lorem ipsum dolor sit</a>
                     </div>
                   </div>
                 </div>
                 <div className="col-md-4">
                   <div className="mn-img">
-                    <img src={news3} />
+                    <img src={news3} alt="" />
                     <div className="mn-title">
-                      <a href="">Lorem ipsum dolor sit</a>
+                      <a href="/">Lorem ipsum dolor sit</a>
                     </div>
                   </div>
                 </div>
                 <div className="col-md-4">
                   <div className="mn-img">
-                    <img src={news4} />
+                    <img src={news4} alt="" />
                     <div className="mn-title">
-                      <a href="">Lorem ipsum dolor sit</a>
+                      <a href="/">Lorem ipsum dolor sit</a>
                     </div>
                   </div>
                 </div>
