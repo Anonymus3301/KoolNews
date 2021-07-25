@@ -214,7 +214,7 @@ function App() {
       <div className="cat-news">
         <div className="container">
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 sports-div">
               <h2>Sports</h2>
               <div className="row cn-slider">
                   <Sports />

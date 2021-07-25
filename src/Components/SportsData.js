@@ -28,9 +28,9 @@ export default class SportsData extends React.Component {
   componentDidMount() {
     Axios.get(
       `
-https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=d1621bd23b2b451491fa11c87f269f8d`
+      https://api.nytimes.com/svc/topstories/v2/sports.json?api-key=Bz6fERmzPVOECjJFPFpQMTtfD9ejn2rb`
     ).then((res) => {
-      this.setState({ results: res.data.articles });
+      this.setState({ results: res.data.results });
       console.log(this.state.results);
     });
   }
@@ -39,13 +39,13 @@ https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=d1621bd23
     return (
       <Slider {...this.state.config}>
         {this.state.results.map((val, key) => {
-          if (!val.urlToImage) {
+          if (!val.multimedia) {
             return "";
           }
           return (
             <div className="col-md-6">
               <div className="cn-img">
-                <img src={val.urlToImage} alt="" />
+                <img src={val.multimedia[3].url} alt="" />
                 <div className="cn-title">
                   <a
                     href={val.url}
