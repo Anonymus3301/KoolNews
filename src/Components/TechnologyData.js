@@ -44,7 +44,7 @@ https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=Bz6fERmzPVOECj
           return (
             <div className="col-md-6" key={key}>
               <div className="cn-img">
-                <img src={val.multimedia[0].url} alt="" />
+                <img src={val.multimedia[3].url} alt="" />
                 <div className="cn-title">
                   <a
                     href={val.url}
