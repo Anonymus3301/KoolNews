@@ -18,6 +18,7 @@ import news21 from "./img/news-450x350-1.jpg";
 import news22 from "./img/news-450x350-2.jpg";
 import React from "react";
 import Sports from "./Components/SportsData";
+import EntertainmentData from "./Components/EntertainmentData";
 
 function App() {
   return (
@@ -218,7 +219,7 @@ function App() {
             <div className="col-md-6 sports-div">
               <h2>Sports</h2>
               <div className="row cn-slider">
-                  <Sports />
+                <Sports />
               </div>
             </div>
             <div className="col-md-6 tech-div">
@@ -265,35 +266,10 @@ function App() {
                 </Slider>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 entertainment-div">
               <h2>Entertainment</h2>
               <div className="row cn-slider">
-                <Slider slidesToShow={2} autoplay={true} autoplaySpeed={3000}>
-                  <div className="col-md-6">
-                    <div className="cn-img">
-                      <img src={news2} alt="" />
-                      <div className="cn-title">
-                        <a href="/">Lorem ipsum dolor sit</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="cn-img">
-                      <img src={news1} alt="" />
-                      <div className="cn-title">
-                        <a href="/">Lorem ipsum dolor sit</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="cn-img">
-                      <img src={news3} alt="" />
-                      <div className="cn-title">
-                        <a href="/">Lorem ipsum dolor sit</a>
-                      </div>
-                    </div>
-                  </div>
-                </Slider>
+                <EntertainmentData />
               </div>
             </div>
           </div>

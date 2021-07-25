@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "../App.scss";
 
-export default class SportsData extends React.Component {
+export default class EntertainmentData extends React.Component {
   state = {
     results: [],
     config: {
@@ -27,7 +27,7 @@ export default class SportsData extends React.Component {
   componentDidMount() {
     Axios.get(
       `
-      https://api.nytimes.com/svc/topstories/v2/sports.json?api-key=Bz6fERmzPVOECjJFPFpQMTtfD9ejn2rb`
+https://api.nytimes.com/svc/topstories/v2/theater.json?api-key=Bz6fERmzPVOECjJFPFpQMTtfD9ejn2rb`
     ).then((res) => {
       this.setState({ results: res.data.results });
       console.log(this.state.results);
