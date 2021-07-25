@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "../App.scss";
-import { useEffect } from "react";
 
 export default class TechnologyData extends React.Component {
   state = {
@@ -28,9 +27,9 @@ export default class TechnologyData extends React.Component {
   componentDidMount() {
     Axios.get(
       `
-https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=b5a02579e8674700a09deefa6f24af0c`
+https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=Bz6fERmzPVOECjJFPFpQMTtfD9ejn2rb`
     ).then((res) => {
-      this.setState({ results: res.data.articles });
+      this.setState({ results: res.data.results });
       console.log(this.state.results);
     });
   }
@@ -39,13 +38,13 @@ https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=b5a02
     return (
       <Slider {...this.state.config}>
         {this.state.results.map((val, key) => {
-          if (!val.urlToImage) {
+          if (!val.multimedia) {
             return "";
           }
           return (
-            <div className="col-md-6">
+            <div className="col-md-6" key={key}>
               <div className="cn-img">
-                <img src={val.urlToImage} alt="" />
+                <img src={val.multimedia[0].url} alt="" />
                 <div className="cn-title">
                   <a
                     href={val.url}
