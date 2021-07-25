@@ -16,6 +16,7 @@ import news5 from "./img/news-350x223-5.jpg";
 import news21 from "./img/news-450x350-1.jpg";
 import news22 from "./img/news-450x350-2.jpg";
 import React from "react";
+import Sports from "./Components/SportsData";
 
 function App() {
   return (
@@ -216,6 +217,7 @@ function App() {
             <div className="col-md-6">
               <h2>Sports</h2>
               <div className="row cn-slider">
+                  <Sports />
                 <Slider slidesToShow={2} autoplay={true} autoplaySpeed={3000}>
                   <div className="col-md-6">
                     <div className="cn-img">
