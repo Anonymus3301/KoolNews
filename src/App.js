@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap-grid.css";
 import "./bootstrap-css/bootstrap.css";
 import logo from "./img/logo.png";
 import ads1 from "./img/ads-1.jpg";
+import TechnologyData from "./Components/TechnologyData";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -220,35 +221,10 @@ function App() {
                   <Sports />
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 tech-div">
               <h2>Technology</h2>
               <div className="row cn-slider">
-                <Slider slidesToShow={2} autoplay={true} autoplaySpeed={3000}>
-                  <div className="col-md-6">
-                    <div className="cn-img">
-                      <img src={news4} alt="" />
-                      <div className="cn-title">
-                        <a href="/">Lorem ipsum dolor sit</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="cn-img">
-                      <img src={news5} alt="" />
-                      <div className="cn-title">
-                        <a href="/">Lorem ipsum dolor sit</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="cn-img">
-                      <img src={news1} alt="" />
-                      <div className="cn-title">
-                        <a href="/">Lorem ipsum dolor sit</a>
-                      </div>
-                    </div>
-                  </div>
-                </Slider>
+                <TechnologyData />
               </div>
             </div>
           </div>
