@@ -218,32 +218,6 @@ function App() {
               <h2>Sports</h2>
               <div className="row cn-slider">
                   <Sports />
-                <Slider slidesToShow={2} autoplay={true} autoplaySpeed={3000}>
-                  <div className="col-md-6">
-                    <div className="cn-img">
-                      <img src={news1} alt="" />
-                      <div className="cn-title">
-                        <a href="/">Lorem ipsum dolor sit</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="cn-img">
-                      <img src={news2} alt="" />
-                      <div className="cn-title">
-                        <a href="/">Lorem ipsum dolor sit</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="cn-img">
-                      <img src={news3} alt="" />
-                      <div className="cn-title">
-                        <a href="/">Lorem ipsum dolor sit</a>
-                      </div>
-                    </div>
-                  </div>
-                </Slider>
               </div>
             </div>
             <div className="col-md-6">
