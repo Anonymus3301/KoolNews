@@ -1373,6 +1373,8 @@ button.btn:hover {
     margin-bottom: 30px;
   }
 }
-.MuiSvgIcon-root:hover {
-  fill: #ff6f61;
+.social {
+  .MuiSvgIcon-root:hover {
+    fill: #ff6f61;
+  }
 }
