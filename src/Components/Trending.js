@@ -37,7 +37,7 @@ export default class Trending extends React.Component {
     return (
       <Slider {...this.state.config}>
         {this.state.results.map((val, key) => {
-          if (!val.multimedia) {
+          if (!val.media[0]) {
             return "";
           }
           return (
