@@ -19,6 +19,7 @@ import news22 from "./img/news-450x350-2.jpg";
 import React from "react";
 import Sports from "./Components/SportsData";
 import EntertainmentData from "./Components/EntertainmentData";
+import Business from "./Components/BusinessData";
 
 function App() {
   return (
@@ -235,10 +236,11 @@ function App() {
       <div className="cat-news">
         <div className="container">
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 business-div">
               <h2>Business</h2>
               <div className="row cn-slider">
-                <Slider slidesToShow={2} autoplay={true} autoplaySpeed={3000}>
+                <Business />
+                {/* <Slider slidesToShow={2} autoplay={true} autoplaySpeed={3000}>
                   <div className="col-md-6">
                     <div className="cn-img">
                       <img src={news5} alt="" />
@@ -263,7 +265,7 @@ function App() {
                       </div>
                     </div>
                   </div>
-                </Slider>
+                </Slider> */}
               </div>
             </div>
             <div className="col-md-6 entertainment-div">
