@@ -20,6 +20,15 @@ import React from "react";
 import Sports from "./Components/SportsData";
 import EntertainmentData from "./Components/EntertainmentData";
 import Business from "./Components/BusinessData";
+import MostPopular from "./Components/MostPopular";
+import {
+  Facebook,
+  Instagram,
+  LinkedIn,
+  SearchOutlined,
+  Twitter,
+  YouTube,
+} from "@material-ui/icons";
 
 function App() {
   return (
@@ -71,6 +80,7 @@ function App() {
                 <input type="text" placeholder="Search"></input>
                 <button>
                   <i className="fa fa-search"></i>
+                  <SearchOutlined />
                 </button>
               </div>
             </div>
@@ -128,18 +138,23 @@ function App() {
               <div className="social ml-auto">
                 <a href="/">
                   <i className="fab fa-twitter"></i>
+                  <Twitter style={{ color: "white" }} />
                 </a>
                 <a href="/">
                   <i className="fab fa-facebook-f"></i>
+                  <Facebook style={{ color: "white" }} />
                 </a>
                 <a href="/">
                   <i className="fab fa-linkedin-in"></i>
+                  <LinkedIn style={{ color: "white" }} />
                 </a>
                 <a href="/">
                   <i className="fab fa-instagram"></i>
+                  <Instagram style={{ color: "white" }} />
                 </a>
                 <a href="/">
                   <i className="fab fa-youtube"></i>
+                  <YouTube style={{ color: "white" }} />
                 </a>
               </div>
             </div>
@@ -175,40 +190,7 @@ function App() {
               </div>
             </div>
             <div className="col-md-6 tn-right">
-              <div className="row">
-                <div className="col-md-6">
-                  <div className="tn-img">
-                    <img src={news1} alt="" />
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit</a>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="tn-img">
-                    <img src={news2} alt="" />
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit</a>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="tn-img">
-                    <img src={news3} alt="" />
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit</a>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="tn-img">
-                    <img src={news4} alt="" />
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <MostPopular />
             </div>
           </div>
         </div>
@@ -233,261 +215,19 @@ function App() {
         </div>
       </div>
 
-      <div className="cat-news">
+      <div className="cat-news second">
         <div className="container">
           <div className="row">
             <div className="col-md-6 business-div">
               <h2>Business</h2>
               <div className="row cn-slider">
                 <Business />
-                {/* <Slider slidesToShow={2} autoplay={true} autoplaySpeed={3000}>
-                  <div className="col-md-6">
-                    <div className="cn-img">
-                      <img src={news5} alt="" />
-                      <div className="cn-title">
-                        <a href="/">Lorem ipsum dolor sit</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="cn-img">
-                      <img src={news4} alt="" />
-                      <div className="cn-title">
-                        <a href="/">Lorem ipsum dolor sit</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="cn-img">
-                      <img src={news3} alt="" />
-                      <div className="cn-title">
-                        <a href="/">Lorem ipsum dolor sit</a>
-                      </div>
-                    </div>
-                  </div>
-                </Slider> */}
               </div>
             </div>
             <div className="col-md-6 entertainment-div">
               <h2>Entertainment</h2>
               <div className="row cn-slider">
                 <EntertainmentData />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="tab-news">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6">
-              <ul className="nav nav-pills nav-justified">
-                <li className="nav-item">
-                  <a
-                    className="nav-link active"
-                    data-toggle="pill"
-                    href="#featured"
-                  >
-                    Featured News
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" data-toggle="pill" href="#popular">
-                    Popular News
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" data-toggle="pill" href="#latest">
-                    Latest News
-                  </a>
-                </li>
-              </ul>
-
-              <div className="tab-content">
-                <div id="featured" className="container tab-pane active">
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news1} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news2} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news3} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                </div>
-                <div id="popular" className="container tab-pane fade">
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news4} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news5} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news1} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                </div>
-                <div id="latest" className="container tab-pane fade">
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news2} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news3} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news4} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-6">
-              <ul className="nav nav-pills nav-justified">
-                <li className="nav-item">
-                  <a
-                    className="nav-link active"
-                    data-toggle="pill"
-                    href="#m-viewed"
-                  >
-                    Most Viewed
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" data-toggle="pill" href="#m-read">
-                    Most Read
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" data-toggle="pill" href="#m-recent">
-                    Most Recent
-                  </a>
-                </li>
-              </ul>
-
-              <div className="tab-content">
-                <div id="m-viewed" className="container tab-pane active">
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news5} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news4} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news3} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                </div>
-                <div id="m-read" className="container tab-pane fade">
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news2} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news1} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news3} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                </div>
-                <div id="m-recent" className="container tab-pane fade">
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news4} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news5} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                  <div className="tn-news">
-                    <div className="tn-img">
-                      <img src={news1} alt="" />
-                    </div>
-                    <div className="tn-title">
-                      <a href="/">Lorem ipsum dolor sit amet</a>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
