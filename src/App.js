@@ -22,6 +22,7 @@ import EntertainmentData from "./Components/EntertainmentData";
 import Business from "./Components/BusinessData";
 import MostPopular from "./Components/MostPopular";
 import Trending from "./Components/Trending";
+import WorldData from "./Components/WorldData";
 import {
   Facebook,
   Instagram,
@@ -169,26 +170,6 @@ function App() {
             <div className="col-md-6 tn-left">
               <div className="row tn-slider">
               <Trending />
-                {/* <Slider>
-                  <div className="col-md-6">
-                    <div className="tn-img">
-                      <img src={news21} alt="" />
-                      <div className="tn-title">
-                        <a href="/">Lorem ipsum dolor sit amet</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="tn-img">
-                      <img src={news22} alt="" />
-                      <div className="tn-title">
-                        <a href="/">
-                          Integer hendrerit elit eget purus sodales maximus
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </Slider> */}
               </div>
             </div>
             <div className="col-md-6 tn-right">
@@ -241,7 +222,8 @@ function App() {
           <div className="row">
             <div className="col-lg-9">
               <div className="row">
-                <div className="col-md-4">
+              <WorldData />
+                {/* <div className="col-md-4">
                   <div className="mn-img">
                     <img src={news1} alt="" />
                     <div className="mn-title">
@@ -312,7 +294,7 @@ function App() {
                       <a href="/">Lorem ipsum dolor sit</a>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 
