@@ -14,13 +14,14 @@ import news2 from "./img/news-350x223-2.jpg";
 import news3 from "./img/news-350x223-3.jpg";
 import news4 from "./img/news-350x223-4.jpg";
 import news5 from "./img/news-350x223-5.jpg";
-import news21 from "./img/news-450x350-1.jpg";
-import news22 from "./img/news-450x350-2.jpg";
+// import news21 from "./img/news-450x350-1.jpg";
+// import news22 from "./img/news-450x350-2.jpg";
 import React from "react";
 import Sports from "./Components/SportsData";
 import EntertainmentData from "./Components/EntertainmentData";
 import Business from "./Components/BusinessData";
 import MostPopular from "./Components/MostPopular";
+import Trending from "./Components/Trending";
 import {
   Facebook,
   Instagram,
@@ -167,7 +168,8 @@ function App() {
           <div className="row">
             <div className="col-md-6 tn-left">
               <div className="row tn-slider">
-                <Slider>
+              <Trending />
+                {/* <Slider>
                   <div className="col-md-6">
                     <div className="tn-img">
                       <img src={news21} alt="" />
@@ -186,7 +188,7 @@ function App() {
                       </div>
                     </div>
                   </div>
-                </Slider>
+                </Slider> */}
               </div>
             </div>
             <div className="col-md-6 tn-right">
