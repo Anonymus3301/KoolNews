@@ -2,15 +2,15 @@ import React from "react";
 import Axios from "axios";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 import "../App.scss";
-import pop_img from "../img/mostpop_img.png";
+import { Whatshot } from "@material-ui/icons";
 
-var p = 0;
-export default class MostPopular extends React.Component {
+export default class Trending extends React.Component {
   state = {
     results: [],
     config: {
-      slidesToShow: 2,
+      slidesToShow: 1,
       autoplay: true,
       autoplaySpeed: 3000,
       responsive: [
@@ -27,8 +27,7 @@ export default class MostPopular extends React.Component {
 
   componentDidMount() {
     Axios.get(
-      `
-https://api.nytimes.com/svc/mostpopular/v2/viewed/30.json?api-key=Bz6fERmzPVOECjJFPFpQMTtfD9ejn2rb`
+      `https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=Bz6fERmzPVOECjJFPFpQMTtfD9ejn2rb`
     ).then((res) => {
       this.setState({ results: res.data.results });
       console.log(this.state.results);
@@ -37,26 +36,31 @@ https://api.nytimes.com/svc/mostpopular/v2/viewed/30.json?api-key=Bz6fERmzPVOECj
 
   render() {
     return (
-      <div className="row popular-div">
+      <Slider {...this.state.config}>
         {this.state.results.map((val, key) => {
-          if (!val.media[0] || p > 3) {
+          if (!val.media[0]) {
             return "";
-          } else {
-            p++;
           }
           return (
-            <div className="col-md-6" key={key}>
-              <img className="pop-badge" src={pop_img} alt=""></img>
+            <div className="col-md-6 trending-div" key={key}>
+              <Whatshot className="trendicon" />
               <div className="tn-img">
-                <img src={val["media"][0]["media-metadata"][1]["url"]} alt="" />
+                <img src={val["media"][0]["media-metadata"][2]["url"]} alt="" />
                 <div className="tn-title">
-                  <a href={val.url}>{val.title}</a>
+                  <a
+                    href={val.url}
+                    // target="_blank"
+                    // rel="noreferrer"
+                    // className="title-inner"
+                  >
+                    {val.title}
+                  </a>
                 </div>
               </div>
             </div>
           );
         })}
-      </div>
+      </Slider>
     );
   }
 }
