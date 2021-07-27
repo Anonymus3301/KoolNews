@@ -2,7 +2,6 @@ import React from "react";
 import Axios from "axios";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import "../App.scss";
 
 var p = 0;
@@ -36,9 +35,9 @@ export default class WorldData extends React.Component {
 
   render() {
     return (
-    <div className = "row world-div">
+      <div className="row world-div">
         {this.state.results.map((val, key) => {
-          if (!val.multimedia || ++p>9) {
+          if (!val.multimedia || ++p > 9) {
             return "";
           }
           return (
@@ -59,7 +58,7 @@ export default class WorldData extends React.Component {
             </div>
           );
         })}
-    </div>
+      </div>
     );
   }
 }
