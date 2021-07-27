@@ -1,4 +1,10 @@
 .popular-div {
+  position: relative;
+  .pop-badge {
+    width: 40px;
+    position: absolute;
+    z-index: 1;
+  }
   .tn-title {
     position: absolute;
     top: 0;

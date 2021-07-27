@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "../App.scss";
+import { Whatshot } from "@material-ui/icons";
 
 export default class Trending extends React.Component {
   state = {
@@ -42,6 +43,7 @@ export default class Trending extends React.Component {
           }
           return (
             <div className="col-md-6 trending-div" key={key}>
+              <Whatshot className="trendicon" />
               <div className="tn-img">
                 <img src={val["media"][0]["media-metadata"][2]["url"]} alt="" />
                 <div className="tn-title">

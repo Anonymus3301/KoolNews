@@ -419,7 +419,6 @@ button.btn:hover {
 
 .top-news .tn-left .tn-title a {
   font-size: 30px;
-  font-weight: 300;
 }
 
 .top-news .tn-title a:hover {
@@ -1377,4 +1376,7 @@ button.btn:hover {
   .MuiSvgIcon-root:hover {
     fill: #ff6f61;
   }
+}
+a {
+  text-decoration: none !important;
 }

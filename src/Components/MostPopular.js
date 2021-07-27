@@ -3,6 +3,7 @@ import Axios from "axios";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../App.scss";
+import pop_img from "../img/mostpop_img.png";
 
 var p = 0;
 export default class MostPopular extends React.Component {
@@ -45,6 +46,7 @@ https://api.nytimes.com/svc/mostpopular/v2/viewed/30.json?api-key=Bz6fERmzPVOECj
           }
           return (
             <div className="col-md-6" key={key}>
+              <img className="pop-badge" src={pop_img} alt=""></img>
               <div className="tn-img">
                 <img src={val["media"][0]["media-metadata"][1]["url"]} alt="" />
                 <div className="tn-title">
