@@ -8,14 +8,6 @@ import ads1 from "./img/ads-1.jpg";
 import TechnologyData from "./Components/TechnologyData";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import news1 from "./img/news-350x223-1.jpg";
-import news2 from "./img/news-350x223-2.jpg";
-import news3 from "./img/news-350x223-3.jpg";
-import news4 from "./img/news-350x223-4.jpg";
-import news5 from "./img/news-350x223-5.jpg";
-// import news21 from "./img/news-450x350-1.jpg";
-// import news22 from "./img/news-450x350-2.jpg";
 import React from "react";
 import Sports from "./Components/SportsData";
 import EntertainmentData from "./Components/EntertainmentData";
@@ -169,7 +161,7 @@ function App() {
           <div className="row">
             <div className="col-md-6 tn-left">
               <div className="row tn-slider">
-              <Trending />
+                <Trending />
               </div>
             </div>
             <div className="col-md-6 tn-right">
@@ -222,7 +214,7 @@ function App() {
           <div className="row">
             <div className="col-lg-9">
               <div className="row">
-              <WorldData />
+                <WorldData />
                 {/* <div className="col-md-4">
                   <div className="mn-img">
                     <img src={news1} alt="" />
