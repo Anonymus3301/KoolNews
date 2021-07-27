@@ -1,20 +1,36 @@
 import React from "react";
 import "../App.scss";
+import emailjs from "emailjs-com";
 
 function Contact() {
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_382776l', 'template_abc6n4s', e.target, 'user_UoyXG6GIs21hFcx6zkdmI')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset();
+  }
+
+
   return (
     <div class="contact">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-8">
             <div class="contact-form">
-              <form>
+              <form onSubmit={sendEmail}>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <input
                       type="text"
                       class="form-control"
                       placeholder="Your Name"
+                      name="name"
                     />
                   </div>
                   <div class="form-group col-md-6">
@@ -22,6 +38,7 @@ function Contact() {
                       type="email"
                       class="form-control"
                       placeholder="Your Email"
+                      name="email"
                     />
                   </div>
                 </div>
@@ -30,6 +47,7 @@ function Contact() {
                     type="text"
                     class="form-control"
                     placeholder="Subject"
+                    name="subject"
                   />
                 </div>
                 <div class="form-group">
@@ -37,6 +55,7 @@ function Contact() {
                     class="form-control"
                     rows="5"
                     placeholder="Message"
+                    name="message"
                   ></textarea>
                 </div>
                 <div>
