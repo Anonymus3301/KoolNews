@@ -116,7 +116,7 @@ function App() {
                       className="nav-link dropdown-toggle"
                       data-toggle="dropdown"
                     >
-                      Dropdown
+                      Categories
                     </a>
                     <div className="dropdown-menu">
                       <a href="/display" className="dropdown-item">
@@ -127,9 +127,6 @@ function App() {
                       </a>
                     </div>
                   </div>
-                  <a href="/display" className="nav-item nav-link">
-                    Single Page
-                  </a>
                   <a href="/contact" className="nav-item nav-link">
                     Contact Us
                   </a>
