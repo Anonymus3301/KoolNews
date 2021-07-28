@@ -1,5 +1,6 @@
 import React from "react";
 import Axios from "axios";
+import "../styles/animate.css";
 import "../App.scss";
 
 export default class DisplayPage extends React.Component {
@@ -32,7 +33,7 @@ https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=Bz6fERmzPVOECj
                   }
                   p++;
                   return (
-                    <div className="compdata" key={key}>
+                    <div className="compdata animated bounceIn" key={key}>
                       <div className="span">
                         <a href={val.url}>
                           <img src={val.multimedia[0].url} alt=""></img>
@@ -50,7 +51,7 @@ https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=Bz6fERmzPVOECj
                   }
                   p++;
                   return (
-                    <div className="compdata" key={key}>
+                    <div className="compdata animated bounceIn" key={key}>
                       <div className="span">
                         <a href={val.url}>
                           <img src={val.multimedia[0].url} alt=""></img>
@@ -68,7 +69,7 @@ https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=Bz6fERmzPVOECj
                   }
                   p++;
                   return (
-                    <div className="compdata" key={key}>
+                    <div className="compdata animated bounceIn" key={key}>
                       <div className="span">
                         <a href={val.url}>
                           <img src={val.multimedia[0].url} alt=""></img>
@@ -86,7 +87,7 @@ https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=Bz6fERmzPVOECj
                   }
                   p++;
                   return (
-                    <div className="compdata" key={key}>
+                    <div className="compdata animated bounceIn" key={key}>
                       <div className="span">
                         <a href={val.url}>
                           <img src={val.multimedia[0].url} alt=""></img>
@@ -105,7 +106,7 @@ https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=Bz6fERmzPVOECj
                   }
                   q++;
                   return (
-                    <div className="compdata" key={key}>
+                    <div className="compdata animated bounceIn" key={key}>
                       <div className="span">
                         <a href={val.url}>
                           <img src={val.multimedia[0].url} alt=""></img>
@@ -123,7 +124,7 @@ https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=Bz6fERmzPVOECj
                   }
                   q++;
                   return (
-                    <div className="compdata" key={key}>
+                    <div className="compdata animated bounceIn" key={key}>
                       <div className="span">
                         <a href={val.url}>
                           <img src={val.multimedia[0].url} alt=""></img>
@@ -141,7 +142,7 @@ https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=Bz6fERmzPVOECj
                   }
                   q++;
                   return (
-                    <div className="compdata" key={key}>
+                    <div className="compdata animated bounceIn" key={key}>
                       <div className="span">
                         <a href={val.url}>
                           <img src={val.multimedia[0].url} alt=""></img>
@@ -158,7 +159,7 @@ https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=Bz6fERmzPVOECj
                     return "";
                   }
                   return (
-                    <div className="compdata" key={key}>
+                    <div className="compdata animated bounceIn" key={key}>
                       <div className="span">
                         <a href={val.url}>
                           <img src={val.multimedia[0].url} alt=""></img>
@@ -175,7 +176,7 @@ https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=Bz6fERmzPVOECj
                     return "";
                   }
                   return (
-                    <div className="compdata" key={key}>
+                    <div className="compdata animated bounceIn" key={key}>
                       <div className="span">
                         <a href={val.url}>
                           <img src={val.multimedia[0].url} alt=""></img>
@@ -192,7 +193,10 @@ https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=Bz6fERmzPVOECj
                     return "";
                   }
                   return (
-                    <div className="compdata" key={key}>
+                    <div
+                      className="compdata animete-box animated bounceIn"
+                      key={key}
+                    >
                       <div className="span">
                         <a href={val.url}>
                           <img src={val.multimedia[0].url} alt=""></img>

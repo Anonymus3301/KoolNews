@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "../App.scss";
 import pop_img from "../img/mostpop_img.png";
 
-var p = 0;
 export default class MostPopular extends React.Component {
   state = {
     results: [],
@@ -36,13 +35,14 @@ https://api.nytimes.com/svc/mostpopular/v2/viewed/30.json?api-key=Bz6fERmzPVOECj
   }
 
   render() {
+    var cnt = 0;
     return (
       <div className="row popular-div">
         {this.state.results.map((val, key) => {
-          if (!val.media[0] || p > 3) {
+          if (!val.media[0] || cnt > 3) {
             return "";
           } else {
-            p++;
+            cnt++;
           }
           return (
             <div className="col-md-6" key={key}>
