@@ -1,6 +1,6 @@
 import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./bootstrap-css/bootstrap-grid.min.css";
+import "./bootstrap-css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap-grid.css";
 import "./bootstrap-css/bootstrap.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -9,7 +9,7 @@ import ads1 from "./img/ads-1.jpg";
 import TechnologyData from "./Components/TechnologyData";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React from "react";
+import React, { useState } from "react";
 import Sports from "./Components/SportsData";
 import EntertainmentData from "./Components/EntertainmentData";
 import Business from "./Components/BusinessData";
@@ -29,6 +29,10 @@ import {
 } from "@material-ui/icons";
 
 function App() {
+  const [r, setR] = useState("none");
+  const [q, setQ] = useState("none");
+  var styl = { display: q };
+  var stl = { display: r };
   return (
     <Router>
       <div className="App">
@@ -94,6 +98,13 @@ function App() {
                 MENU
               </a>
               <button
+                onClick={() => {
+                  if (r === "none") {
+                    setR("block");
+                  } else {
+                    setR("none");
+                  }
+                }}
                 type="button"
                 className="navbar-toggler"
                 data-toggle="collapse"
@@ -103,31 +114,59 @@ function App() {
               </button>
 
               <div
-                className="collapse navbar-collapse justify-content-between"
+                style={stl}
+                className="navbar-collapse justify-content-between"
                 id="navbarCollapse"
               >
                 <div className="navbar-nav mr-auto">
-                  <a href="/" className="nav-item nav-link active">
+                  <a href="/" className="nav-ite nav-link">
                     Home
                   </a>
-                  <div className="nav-item dropdown">
-                    <a
-                      href="/"
+                  <div className="nav-ite categories-drop">
+                    <span
+                      onClick={() => {
+                        if (q === "block") {
+                          setQ("none");
+                        } else {
+                          setQ("block");
+                        }
+                      }}
                       className="nav-link dropdown-toggle"
                       data-toggle="dropdown"
                     >
                       Categories
-                    </a>
-                    <div className="dropdown-menu">
+                    </span>
+                    <div style={styl} className="dropdown-menu">
                       <a href="/display" className="dropdown-item">
-                        Sub Item 1
+                        Business
                       </a>
                       <a href="/display" className="dropdown-item">
-                        Sub Item 2
+                        Fashion
+                      </a>
+                      <a href="/display" className="dropdown-item">
+                        Health
+                      </a>
+                      <a href="/display" className="dropdown-item">
+                        Movies
+                      </a>
+                      <a href="/display" className="dropdown-item">
+                        Politics
+                      </a>
+                      <a href="/display" className="dropdown-item">
+                        Science
+                      </a>
+                      <a href="/display" className="dropdown-item">
+                        Sports
+                      </a>
+                      <a href="/display" className="dropdown-item">
+                        Technology
+                      </a>
+                      <a href="/display" className="dropdown-item">
+                        World
                       </a>
                     </div>
                   </div>
-                  <a href="/contact" className="nav-item nav-link">
+                  <a href="/contact" className="nav-ite nav-link">
                     Contact Us
                   </a>
                 </div>
