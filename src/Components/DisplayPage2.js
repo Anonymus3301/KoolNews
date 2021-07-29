@@ -1,35 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import Axios from "axios";
-import "../styles/animate.css";
 import "../App.scss";
 
-export default class DisplayPage extends React.Component {
-  state = {
-    results: [],
-  };
-
-  componentDidMount() {
-    Axios.get(
-      `
-https://api.nytimes.com/svc/topstories/v2/${
-        this.props.myState ? this.props.myState : "Technology"
-      }.json?api-key=Bz6fERmzPVOECjJFPFpQMTtfD9ejn2rb`
-    ).then((res) => {
-      this.setState({ results: res.data.results });
-      console.log(this.props);
-    });
-  }
-
-  render() {
-    var p = 0;
-    var q = 0;
-    return (
-      <div id="fh5co-main">
-        <div className="container">
-          <div className="row">
-            <div id="fh5co-board">
-              <div className="of14">
-                {this.state.results.map((val, key) => {
+function DisplayPage2() {
+  const myState = useSelector((state) => state.changeData);
+  const [topic, setTopic] = useState("Technology");
+  const [results, setResults] = useState({});
+  const arr = [1, 2, 3, 4, 5];
+  console.log(arr.find((k) => k === 5));
+  useEffect(() => {
+    if (myState !== topic) {
+      setTopic(myState);
+    }
+  }, [myState]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (topic === myState) {
+      Axios.get(
+        `
+https://api.nytimes.com/svc/topstories/v2/${topic}.json?api-key=Bz6fERmzPVOECjJFPFpQMTtfD9ejn2rb`
+      ).then((res) => {
+        setResults(res.data.results);
+      });
+    }
+  }, [topic]); // eslint-disable-line react-hooks/exhaustive-deps
+  console.log(topic, results, "kl");
+  var p = 0;
+  var q = 0;
+  return (
+    <div id="fh5co-main">
+      <div className="container">
+        <div className="row">
+          <div id="fh5co-board">
+            <div className="of14">
+              {results &&
+                results.length &&
+                results.map((val, key) => {
                   if (key % 4 !== 0 || !val.multimedia || p > 4) {
                     return "";
                   }
@@ -45,9 +51,11 @@ https://api.nytimes.com/svc/topstories/v2/${
                     </div>
                   );
                 })}
-              </div>
-              <div className="of14">
-                {this.state.results.map((val, key) => {
+            </div>
+            <div className="of14">
+              {results &&
+                results.length &&
+                results.map((val, key) => {
                   if (key % 4 !== 1 || !val.multimedia || p > 9) {
                     return "";
                   }
@@ -63,9 +71,11 @@ https://api.nytimes.com/svc/topstories/v2/${
                     </div>
                   );
                 })}
-              </div>
-              <div className="of14">
-                {this.state.results.map((val, key) => {
+            </div>
+            <div className="of14">
+              {results &&
+                results.length &&
+                results.map((val, key) => {
                   if (key % 4 !== 2 || !val.multimedia || p > 14) {
                     return "";
                   }
@@ -81,9 +91,11 @@ https://api.nytimes.com/svc/topstories/v2/${
                     </div>
                   );
                 })}
-              </div>
-              <div className="of14">
-                {this.state.results.map((val, key) => {
+            </div>
+            <div className="of14">
+              {results &&
+                results.length &&
+                results.map((val, key) => {
                   if (key % 4 !== 3 || !val.multimedia || p > 19) {
                     return "";
                   }
@@ -99,10 +111,12 @@ https://api.nytimes.com/svc/topstories/v2/${
                     </div>
                   );
                 })}
-              </div>
+            </div>
 
-              <div className="of13">
-                {this.state.results.map((val, key) => {
+            <div className="of13">
+              {results &&
+                results.length &&
+                results.map((val, key) => {
                   if (key % 3 !== 0 || !val.multimedia || q > 5) {
                     return "";
                   }
@@ -118,9 +132,11 @@ https://api.nytimes.com/svc/topstories/v2/${
                     </div>
                   );
                 })}
-              </div>
-              <div className="of13">
-                {this.state.results.map((val, key) => {
+            </div>
+            <div className="of13">
+              {results &&
+                results.length &&
+                results.map((val, key) => {
                   if (key % 3 !== 1 || !val.multimedia || q > 11) {
                     return "";
                   }
@@ -136,9 +152,11 @@ https://api.nytimes.com/svc/topstories/v2/${
                     </div>
                   );
                 })}
-              </div>
-              <div className="of13">
-                {this.state.results.map((val, key) => {
+            </div>
+            <div className="of13">
+              {results &&
+                results.length &&
+                results.map((val, key) => {
                   if (key % 3 !== 2 || !val.multimedia || q > 17) {
                     return "";
                   }
@@ -154,9 +172,11 @@ https://api.nytimes.com/svc/topstories/v2/${
                     </div>
                   );
                 })}
-              </div>
-              <div className="of12">
-                {this.state.results.map((val, key) => {
+            </div>
+            <div className="of12">
+              {results &&
+                results.length &&
+                results.map((val, key) => {
                   if (key % 2 !== 0 || !val.multimedia) {
                     return "";
                   }
@@ -171,9 +191,11 @@ https://api.nytimes.com/svc/topstories/v2/${
                     </div>
                   );
                 })}
-              </div>
-              <div className="of12">
-                {this.state.results.map((val, key) => {
+            </div>
+            <div className="of12">
+              {results &&
+                results.length &&
+                results.map((val, key) => {
                   if (key % 2 !== 1 || !val.multimedia) {
                     return "";
                   }
@@ -188,9 +210,11 @@ https://api.nytimes.com/svc/topstories/v2/${
                     </div>
                   );
                 })}
-              </div>
-              <div className="of11">
-                {this.state.results.map((val, key) => {
+            </div>
+            <div className="of11">
+              {results &&
+                results.length &&
+                results.map((val, key) => {
                   if (!val.multimedia) {
                     return "";
                   }
@@ -208,11 +232,12 @@ https://api.nytimes.com/svc/topstories/v2/${
                     </div>
                   );
                 })}
-              </div>
             </div>
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+export default DisplayPage2;

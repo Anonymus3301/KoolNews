@@ -4,20 +4,23 @@ import "./bootstrap-css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap-grid.css";
 import "./bootstrap-css/bootstrap.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "./img/logo.png";
 import ads1 from "./img/ads-1.jpg";
 import TechnologyData from "./Components/TechnologyData";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Sports from "./Components/SportsData";
 import EntertainmentData from "./Components/EntertainmentData";
 import Business from "./Components/BusinessData";
 import MostPopular from "./Components/MostPopular";
 import Trending from "./Components/Trending";
 import WorldData from "./Components/WorldData";
-import DisplayPage from "./Components/DisplayPage";
+import DisplayPage2 from "./Components/DisplayPage2";
 import Contact from "./Components/Contact";
+import { useDispatch, useSelector } from "react-redux";
+import { displayData } from "./Components/actions/action";
 
 import {
   Facebook,
@@ -29,6 +32,12 @@ import {
 } from "@material-ui/icons";
 
 function App() {
+  const dispatch = useDispatch();
+  const myState = useSelector((state) => state.changeData);
+
+  useEffect(() => {
+    console.log(myState, "update");
+  }, [myState]);
   const [r, setR] = useState("none");
   const [q, setQ] = useState("none");
   var styl = { display: q };
@@ -51,7 +60,7 @@ function App() {
               </div>
               <div className="col-md-6">
                 <div className="tb-menu">
-                  <a href="/">About</a>
+                  <Link to="/">About</Link>
                   <a href="/">Privacy</a>
                   <a href="/">Terms</a>
                   <a href="/">Contact</a>
@@ -119,9 +128,9 @@ function App() {
                 id="navbarCollapse"
               >
                 <div className="navbar-nav mr-auto">
-                  <a href="/" className="nav-ite nav-link">
+                  <Link to="/" className="nav-ite nav-link">
                     Home
-                  </a>
+                  </Link>
                   <div className="nav-ite categories-drop">
                     <span
                       onClick={() => {
@@ -137,33 +146,106 @@ function App() {
                       Categories
                     </span>
                     <div style={styl} className="dropdown-menu">
-                      <a href="/display" className="dropdown-item">
-                        Business
-                      </a>
-                      <a href="/display" className="dropdown-item">
-                        Fashion
-                      </a>
-                      <a href="/display" className="dropdown-item">
-                        Health
-                      </a>
-                      <a href="/display" className="dropdown-item">
-                        Movies
-                      </a>
-                      <a href="/display" className="dropdown-item">
-                        Politics
-                      </a>
-                      <a href="/display" className="dropdown-item">
-                        Science
-                      </a>
-                      <a href="/display" className="dropdown-item">
-                        Sports
-                      </a>
-                      <a href="/display" className="dropdown-item">
-                        Technology
-                      </a>
-                      <a href="/display" className="dropdown-item">
-                        World
-                      </a>
+                      <Link to="/display">
+                        <span
+                          className="dropdown-item"
+                          onClick={() => {
+                            dispatch(displayData("Business"));
+                            setQ("none");
+                            setR("none");
+                          }}
+                        >
+                          Business
+                        </span>
+                        <span
+                          href="/display"
+                          className="dropdown-item"
+                          onClick={() => {
+                            dispatch(displayData("Fashion"));
+                            setQ("none");
+                            setR("none");
+                          }}
+                        >
+                          Fashion
+                        </span>
+                        <span
+                          href="/display"
+                          className="dropdown-item"
+                          onClick={() => {
+                            dispatch(displayData("Health"));
+                            setQ("none");
+                            setR("none");
+                          }}
+                        >
+                          Health
+                        </span>
+                        <span
+                          href="/display"
+                          className="dropdown-item"
+                          onClick={() => {
+                            dispatch(displayData("Movies"));
+                            setQ("none");
+                            setR("none");
+                          }}
+                        >
+                          Movies
+                        </span>
+                        <span
+                          href="/display"
+                          className="dropdown-item"
+                          onClick={() => {
+                            dispatch(displayData("Politics"));
+                            setQ("none");
+                            setR("none");
+                          }}
+                        >
+                          Politics
+                        </span>
+                        <span
+                          href="/display"
+                          className="dropdown-item"
+                          onClick={() => {
+                            dispatch(displayData("Science"));
+                            setQ("none");
+                            setR("none");
+                          }}
+                        >
+                          Science
+                        </span>
+                        <span
+                          href="/display"
+                          className="dropdown-item"
+                          onClick={() => {
+                            dispatch(displayData("Sports"));
+                            setQ("none");
+                            setR("none");
+                          }}
+                        >
+                          Sports
+                        </span>
+                        <span
+                          href="/display"
+                          className="dropdown-item"
+                          onClick={() => {
+                            dispatch(displayData("Technology"));
+                            setQ("none");
+                            setR("none");
+                          }}
+                        >
+                          Technology
+                        </span>
+                        <span
+                          href="/display"
+                          className="dropdown-item"
+                          onClick={() => {
+                            dispatch(displayData("World"));
+                            setQ("none");
+                            setR("none");
+                          }}
+                        >
+                          World
+                        </span>
+                      </Link>
                     </div>
                   </div>
                   <a href="/contact" className="nav-ite nav-link">
@@ -306,7 +388,7 @@ function App() {
             </div>
           </Route>
           <Route path="/display" exact>
-            <DisplayPage />
+            <DisplayPage2 />
           </Route>
           <Route path="/contact" exact>
             <Contact />
