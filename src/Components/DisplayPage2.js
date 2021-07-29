@@ -7,8 +7,7 @@ function DisplayPage2() {
   const myState = useSelector((state) => state.changeData);
   const [topic, setTopic] = useState("Technology");
   const [results, setResults] = useState({});
-  const arr = [1, 2, 3, 4, 5];
-  console.log(arr.find((k) => k === 5));
+
   useEffect(() => {
     if (myState !== topic) {
       setTopic(myState);
@@ -24,7 +23,7 @@ https://api.nytimes.com/svc/topstories/v2/${topic}.json?api-key=Bz6fERmzPVOECjJF
       });
     }
   }, [topic]); // eslint-disable-line react-hooks/exhaustive-deps
-  console.log(topic, results, "kl");
+
   var p = 0;
   var q = 0;
   return (
