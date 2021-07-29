@@ -30,7 +30,6 @@ export default class Trending extends React.Component {
       `https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=Bz6fERmzPVOECjJFPFpQMTtfD9ejn2rb`
     ).then((res) => {
       this.setState({ results: res.data.results });
-      console.log(this.state.results);
     });
   }
 

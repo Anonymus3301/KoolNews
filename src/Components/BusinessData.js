@@ -30,7 +30,6 @@ export default class BusinessData extends React.Component {
 https://api.nytimes.com/svc/topstories/v2/business.json?api-key=Bz6fERmzPVOECjJFPFpQMTtfD9ejn2rb`
     ).then((res) => {
       this.setState({ results: res.data.results });
-      console.log(this.state.results);
     });
   }
 

@@ -35,9 +35,7 @@ function App() {
   const dispatch = useDispatch();
   const myState = useSelector((state) => state.changeData);
 
-  useEffect(() => {
-    console.log(myState, "update");
-  }, [myState]);
+  useEffect(() => {}, [myState]);
   const [r, setR] = useState("none");
   const [q, setQ] = useState("none");
   var styl = { display: q };

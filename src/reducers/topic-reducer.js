@@ -1,8 +1,8 @@
-const initialState = "Trending";
+const initialState = "World";
 
 //Reducer
 const changeData = (state = initialState, action) => {
-  state = action.type;
+  if (action.type !== "@@INIT") state = action.type;
 
   return state;
 };
