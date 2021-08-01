@@ -1383,3 +1383,10 @@ a {
 .categories-drop:hover {
   cursor: pointer;
 }
+.contact-info {
+  .social {
+    .MuiSvgIcon-root:hover {
+      fill: #111111 !important;
+    }
+  }
+}

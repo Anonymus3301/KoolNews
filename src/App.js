@@ -6,7 +6,6 @@ import "./bootstrap-css/bootstrap.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import logo from "./img/logo.png";
-import ads1 from "./img/ads-1.jpg";
 import TechnologyData from "./Components/TechnologyData";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -19,10 +18,12 @@ import Trending from "./Components/Trending";
 import WorldData from "./Components/WorldData";
 import DisplayPage2 from "./Components/DisplayPage2";
 import Contact from "./Components/Contact";
+import ReadMore from "./Components/ReadMore";
 import { useDispatch, useSelector } from "react-redux";
 import { displayData } from "./Components/actions/action";
 
 import {
+  Email,
   Facebook,
   Instagram,
   LinkedIn,
@@ -70,7 +71,7 @@ function App() {
 
         <div className="brand">
           <div className="container">
-            <div className="row align-items-center">
+            <div className="row align-items-center justify-content-between">
               <div className="col-lg-3 col-md-4">
                 <div className="b-logo">
                   <a href="/">
@@ -78,13 +79,7 @@ function App() {
                   </a>
                 </div>
               </div>
-              <div className="col-lg-6 col-md-4">
-                <div className="b-ads">
-                  <a href="https://htmlcodex.com">
-                    <img src={ads1} alt="Ads"></img>
-                  </a>
-                </div>
-              </div>
+
               <div className="col-lg-3 col-md-4">
                 <div className="b-search">
                   <input type="text" placeholder="Search"></input>
@@ -141,7 +136,7 @@ function App() {
                       className="nav-link dropdown-toggle"
                       data-toggle="dropdown"
                     >
-                      Categories
+                      CATEGORIES
                     </span>
                     <div style={styl} className="dropdown-menu">
                       <Link to="/display">
@@ -343,42 +338,7 @@ function App() {
                   <div className="col-lg-3">
                     <div className="mn-list">
                       <h2>Read More</h2>
-                      <ul>
-                        <li>
-                          <a href="/">Lorem ipsum dolor sit amet</a>
-                        </li>
-                        <li>
-                          <a href="/">Pellentesque tincidunt enim libero</a>
-                        </li>
-                        <li>
-                          <a href="/">Morbi id finibus diam vel pretium enim</a>
-                        </li>
-                        <li>
-                          <a href="/">
-                            Duis semper sapien in eros euismod sodales
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/">Vestibulum cursus lorem nibh</a>
-                        </li>
-                        <li>
-                          <a href="/">
-                            Morbi ullamcorper vulputate metus non eleifend
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/">Etiam vitae elit felis sit amet</a>
-                        </li>
-                        <li>
-                          <a href="/">Nullam congue massa vitae quam</a>
-                        </li>
-                        <li>
-                          <a href="/">Proin sed ante rutrum</a>
-                        </li>
-                        <li>
-                          <a href="/">Curabitur vel lectus</a>
-                        </li>
-                      </ul>
+                      <ReadMore />
                     </div>
                   </div>
                 </div>
@@ -405,26 +365,30 @@ function App() {
                       USA
                     </p>
                     <p>
-                      <i className="fa fa-envelope"></i>info@example.com
+                      <i className="fa fa-envelope"></i>
+                      <Email />
+                      <span>
+                        jsonkusale@ce.iitr.ac.in | msoni@ce.iitr.ac.in
+                      </span>
                     </p>
                     <p>
                       <i className="fa fa-phone"></i>+123-456-7890
                     </p>
                     <div className="social">
                       <a href="/">
-                        <i className="fab fa-twitter"></i>
+                        <Twitter style={{ color: "#111111" }} />
                       </a>
                       <a href="/">
-                        <i className="fab fa-facebook-f"></i>
+                        <Facebook style={{ color: "#111111" }} />
                       </a>
                       <a href="/">
-                        <i className="fab fa-linkedin-in"></i>
+                        <LinkedIn style={{ color: "#111111" }} />
                       </a>
                       <a href="/">
-                        <i className="fab fa-instagram"></i>
+                        <Instagram style={{ color: "#111111" }} />
                       </a>
                       <a href="/">
-                        <i className="fab fa-youtube"></i>
+                        <YouTube style={{ color: "#111111" }} />
                       </a>
                     </div>
                   </div>
@@ -436,19 +400,9 @@ function App() {
                   <h3 className="title">Useful Links</h3>
                   <ul>
                     <li>
-                      <a href="/">Lorem ipsum</a>
-                    </li>
-                    <li>
-                      <a href="/">Pellentesque</a>
-                    </li>
-                    <li>
-                      <a href="/">Aenean vulputate</a>
-                    </li>
-                    <li>
-                      <a href="/">Vestibulum sit amet</a>
-                    </li>
-                    <li>
-                      <a href="/">Nam dignissim</a>
+                      <a href="https://github.com/Anonymus3301/KoolNews">
+                        Github Repository
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -456,22 +410,13 @@ function App() {
 
               <div className="col-lg-3 col-md-6">
                 <div className="footer-widget">
-                  <h3 className="title">Quick Links</h3>
+                  <h3 className="title">Github Profiles</h3>
                   <ul>
                     <li>
-                      <a href="/">Lorem ipsum</a>
+                      <a href="https://github.com/Anonymus3301">Jatin</a>
                     </li>
                     <li>
-                      <a href="/">Pellentesque</a>
-                    </li>
-                    <li>
-                      <a href="/">Aenean vulputate</a>
-                    </li>
-                    <li>
-                      <a href="/">Vestibulum sit amet</a>
-                    </li>
-                    <li>
-                      <a href="/">Nam dignissim</a>
+                      <a href="https://github.com/mukuls10">Mukul</a>
                     </li>
                   </ul>
                 </div>
@@ -481,10 +426,7 @@ function App() {
                 <div className="footer-widget">
                   <h3 className="title">Newsletter</h3>
                   <div className="newsletter">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Vivamus sed porta dui. Class aptent taciti sociosqu
-                    </p>
+                    <p>This section is not currently available</p>
                     <form>
                       <input
                         className="form-control"

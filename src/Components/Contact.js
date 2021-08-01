@@ -1,6 +1,13 @@
 import React from "react";
 import "../App.scss";
 import emailjs from "emailjs-com";
+import {
+  Twitter,
+  Facebook,
+  LinkedIn,
+  Instagram,
+  YouTube,
+} from "@material-ui/icons";
 
 function Contact() {
   function sendEmail(e) {
@@ -75,36 +82,33 @@ function Contact() {
           </div>
           <div className="col-md-4">
             <div className="contact-info">
-              <h3>Get in Touch</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                condimentum quam ac mi viverra dictum. In efficitur ipsum diam,
-                at dignissim lorem tempor in. Vivamus tempor hendrerit finibus.
-              </p>
+              <h3>About Us</h3>
+              <p>We are final year undergraduate students at IIT Roorkee.</p>
               <h4>
-                <i className="fa fa-map-marker"></i>123 News Street, NY, USA
+                <i className="fa fa-map-marker"></i>IITR
               </h4>
               <h4>
-                <i className="fa fa-envelope"></i>info@example.com
+                <i className="fa fa-envelope"></i>jsonkusale@ce.iitr.ac.in |
+                msoni@ce.iitr.ac.in
               </h4>
               <h4>
                 <i className="fa fa-phone"></i>+123-456-7890
               </h4>
               <div className="social">
                 <a href="/contact">
-                  <i className="fab fa-twitter"></i>
+                  <Twitter style={{ color: "#111111" }} />
                 </a>
                 <a href="/contact">
-                  <i className="fab fa-facebook-f"></i>
+                  <Facebook style={{ color: "#111111" }} />
                 </a>
                 <a href="/contact">
-                  <i className="fab fa-linkedin-in"></i>
+                  <LinkedIn style={{ color: "#111111" }} />
                 </a>
                 <a href="/contact">
-                  <i className="fab fa-instagram"></i>
+                  <Instagram style={{ color: "#111111" }} />
                 </a>
                 <a href="/contact">
-                  <i className="fab fa-youtube"></i>
+                  <YouTube style={{ color: "#111111" }} />
                 </a>
               </div>
             </div>
