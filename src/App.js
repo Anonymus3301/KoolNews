@@ -17,10 +17,11 @@ import MostPopular from "./Components/MostPopular";
 import Trending from "./Components/Trending";
 import WorldData from "./Components/WorldData";
 import DisplayPage2 from "./Components/DisplayPage2";
+import SearchPage from "./Components/Search";
 import Contact from "./Components/Contact";
 import ReadMore from "./Components/ReadMore";
 import { useDispatch, useSelector } from "react-redux";
-import { displayData } from "./Components/actions/action";
+import { displayData, searchQ } from "./Components/actions/action";
 
 import {
   Email,
@@ -35,6 +36,8 @@ import {
 function App() {
   const dispatch = useDispatch();
   const myState = useSelector((state) => state.changeData);
+
+  const [searchC, setSearchC] = useState("");
 
   useEffect(() => {}, [myState]);
   const [r, setR] = useState("none");
@@ -82,11 +85,23 @@ function App() {
 
               <div className="col-lg-3 col-md-4">
                 <div className="b-search">
-                  <input type="text" placeholder="Search"></input>
-                  <button>
-                    <i className="fa fa-search"></i>
-                    <SearchOutlined />
-                  </button>
+                  <input
+                    type="text"
+                    placeholder="Search"
+                    onChange={(e) => {
+                      setSearchC(e.target.value);
+                    }}
+                  ></input>
+                  <Link to="/search">
+                    <button
+                      onClick={() => {
+                        dispatch(searchQ(searchC));
+                      }}
+                    >
+                      <i className="fa fa-search"></i>
+                      <SearchOutlined />
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -350,6 +365,9 @@ function App() {
           </Route>
           <Route path="/contact" exact>
             <Contact />
+          </Route>
+          <Route path="/search" exact>
+            <SearchPage />
           </Route>
         </Switch>
 
