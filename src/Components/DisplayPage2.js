@@ -30,6 +30,7 @@ https://api.nytimes.com/svc/topstories/v2/${topic}.json?api-key=Bz6fERmzPVOECjJF
     <div id="fh5co-main">
       <div className="container">
         <div className="row">
+          <h2 className="Name">{myState}</h2>
           <div id="fh5co-board">
             <div className="of14">
               {results &&
