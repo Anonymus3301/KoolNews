@@ -36,7 +36,6 @@ https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${topic}&page=2&api-k
       setResults3([...results, ...results2]);
     }
   }, [results, results2]);
-  console.log(results3);
   return (
     <div id="fh5co-main">
       <div className="container">
