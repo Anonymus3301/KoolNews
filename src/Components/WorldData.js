@@ -42,7 +42,7 @@ export default class WorldData extends React.Component {
           return (
             <div className="col-md-4" key={key}>
               <div className="mn-img">
-                <img src={val.multimedia[3].url} alt="" />
+                <img src={val.multimedia[0]?.url} alt="" />
                 <div className="mn-title">
                   <a
                     href={val.url}

@@ -28,7 +28,7 @@ export default class ReadMore extends React.Component {
             return "";
           }
           return (
-            <li>
+            <li key={key}>
               <a href={val.url}>
                 {val.title} | {l++}
               </a>
