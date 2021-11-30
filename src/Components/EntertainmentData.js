@@ -43,10 +43,10 @@ https://api.nytimes.com/svc/topstories/v2/theater.json?api-key=Bz6fERmzPVOECjJFP
           return (
             <div className="col-md-6" key={key}>
               <div className="cn-img">
-                <img src={val.multimedia[3].url} alt="" />
+                <img src={val.multimedia[0]?.url} alt="" />
                 <div className="cn-title">
                   <a
-                    href={val.url}
+                    href={val?.url}
                     target="_blank"
                     rel="noreferrer"
                     className="title-inner"
